@@ -1,0 +1,51 @@
+/* Styling for button array */
+#buttons {
+	width: 1000px;
+}
+
+.food-button {
+	padding: 5px;
+	margin: 5px;
+	border-radius: 3px;
+}
+
+/* Styling for GIFs container */
+#images {
+	width: 800px;
+	padding-right: 20px;
+	border-right: 1px solid lightgrey;
+	float: left;
+}
+
+/* Styling for GIFs and Captions */
+.single-gif {
+	position: relative;
+	display: inline-block;
+	padding-left: 20px;
+	margin-top: 40px;
+}
+
+img {
+	height:200px;
+	width:auto;
+}
+
+.caption {
+	position: absolute;
+	top: -25px;
+}
+
+/* Styling for input form */
+#input-form {
+	float: left;
+	margin-left: 40px;
+	margin-top: 20px;
+}
+
+#instructions {
+	margin-bottom: 10px;
+}
+
+input {
+	margin-bottom: 10px;
+}

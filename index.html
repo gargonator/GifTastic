@@ -3,53 +3,29 @@
 <head>
 	<!-- Title -->
 	<title>GifTastic: Food Edition</title>
-
 	<!-- Bootstrap -->
-  	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
-	
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>
 	<!-- Jquery -->
-  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+ 	<!-- Reset stylesheet -->
+	<link rel='stylesheet' href='assets/css/reset.css' type='text/css'>
+	<!-- Main stylesheet -->
+	<link rel='stylesheet' href='assets/css/style.css' type='text/css'>
 </head>
 <body>
-	<div id="buttons"></div>
 
-	<div id="images"></div>
-
-	<script>
-		topics = ["apple pie","pizza","chocolate cake","banana","ice cream","popsicle","steak",
-					"foie gras","coffee","lasagna"];
-
-		for (var i = 0; i < topics.length; i++) {
-			var food_button = $("<button />").text(topics[i]);
-			$("#buttons").append(food_button);
-		};
-
-		// API parameters
-		var APIkey = "5TlWFC3KHJxPDM4UZqKgoPJ0doDKUUMR";
-		var limit = 10;
-
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=pizza"
-			+ "&limit=" + limit 
-			+ "&api_key=" + APIkey;
-
-		$.ajax({
-			method: "GET",
-			url: queryURL,
-		}).done(function(response) {
-			console.log(response);
-			console.log(response.data[0].images.fixed_height.url);
-			console.log(response.data[0].rating);
-
-			var imageURL = response.data[0].images.fixed_height.url;
-
-			var image = $("<img>").attr("src",imageURL);
-			$("#images").append(image);
-
-		})
-
-
-
-	</script>
+	<div id='buttons'></div> <!-- Holds button array -->
+	<div id='images'></div> <!-- Holds GIFs -->
+	<div id='input-form'> <!-- Holds Submit Form to add new buttnos -->
+		<p id='instructions'>Add some more food here!</p>
+		<form>
+			<input type='text' name='food-input'>
+		</form>
+		<button type='submit' id='submit-button'>Submit</button>
+	</div>
+		
+	<script src='assets/javascript/init.js' type='text/javascript'></script>
+	<script src='assets/javascript/helpers.js' type='text/javascript'></script>
 
 </body>
 </html>
